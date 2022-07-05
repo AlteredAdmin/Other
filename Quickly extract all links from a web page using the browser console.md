@@ -22,4 +22,5 @@ function make_table() {
 w.document.write(table); 
 }
 make_table()
-```v
+
+```

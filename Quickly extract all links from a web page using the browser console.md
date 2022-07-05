@@ -2,6 +2,8 @@ https://towardsdatascience.com/quickly-extract-all-links-from-a-web-page-using-j
 
 code snippet you will need to place into the console:
 
+
+```
 var x = document.querySelectorAll("a");
 var myarray = []
 for (var i=0; i<x.length; i++){
@@ -20,3 +22,4 @@ function make_table() {
 w.document.write(table); 
 }
 make_table()
+```v

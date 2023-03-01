@@ -1,0 +1,45 @@
+The Blood Meal application rate is 2 pounds per 100 square feet.
+
+Your raised bed garden is 4 feet by 8 feet, which gives a total area of 32 square feet.
+
+To calculate the amount of Blood Meal you need to apply:
+
+Convert the area of your raised bed to the area per 100 square feet:
+32 square feet ÷ 100 square feet = 0.32
+
+Multiply the application rate by the area per 100 square feet:
+2 pounds per 100 square feet x 0.32 = 0.64 pounds
+
+Convert 0.64 pounds to ounces:
+0.64 pounds x 16 ounces/pound = 10.24 ounces
+
+Convert 0.64 pounds to cups (using a general conversion factor of 1.92 cups per pound):
+0.64 pounds x 1.92 cups/pound ≈ 1.23 cups
+
+Therefore, you would need to apply approximately 10.24 ounces or 1.23 cups of Blood Meal to your 4 foot by 8 foot raised bed garden.
+
+=========================
+
+If you have 25 gallons of soil and want to apply 2 tbsp of fertilizer per gallon of soil, you'll need to use a total of:
+
+2 tablespoons/gallon x 25 gallons = 50 tablespoons of fertilizer
+
+To convert tablespoons to another unit, we can use the following conversion:
+
+1 tablespoon = 3 teaspoons
+
+Therefore, 50 tablespoons of fertilizer is equal to:
+
+50 tablespoons x 3 teaspoons/tablespoon = 150 teaspoons of fertilizer
+
+So, you'll need to use 150 teaspoons of fertilizer for your 25 gallons of soil.
+
+To convert 150 teaspoons to cups, we can use the following conversion factor:
+
+1 cup = 48 teaspoons
+
+Therefore, we can divide the number of teaspoons by 48 to get the number of cups:
+
+150 teaspoons / 48 teaspoons/cup = 3.125 cups
+
+So, 150 teaspoons of fertilizer is equivalent to 3.125 cups of fertilizer.

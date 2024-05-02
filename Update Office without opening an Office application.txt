@@ -1,0 +1,103 @@
+Update Office without opening an Office application
+Asked 4 years, 8 months ago
+Modified 1 year, 4 months ago
+Viewed 127k times
+17
+
+How do you trigger an Office update without opening an office application?
+
+I need this to update Office after an offline install of o365, specifically in instances where Office needs to be updated between installing o365 apps and actually deploying the system.
+
+I know you can do this by opening an office app, then going to File > Office Account > Update Options > Update Now, but I am trying to avoid triggering the Office activation / trial countdown before actually needing to sign a user in.
+
+***edit: I found a solution and posted it below. Please feel free to contribute additional solutions especially if this does not work for older versions of Office.
+
+installationupdatemicrosoft-office
+Share
+Improve this question
+Follow
+edited Aug 13, 2019 at 0:06
+asked Aug 13, 2019 at 0:04
+Rob Traynere's user avatar
+Rob Traynere
+48111 gold badge33 silver badges88 bronze badges
+Add a comment
+3 Answers
+Sorted by:
+
+Highest score (default)
+21
+
+From command prompt:
+
+"C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe" /update user
+
+This should trigger the Update GUI.
+
+You can also do this silently by adding displaylevel=false forceappshutdown=true:
+
+"C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe" /update user displaylevel=false forceappshutdown=true
+
+source: WaybackMachine: TechNet Blog: Office365 and its associated command-line and switches
+
+Share
+Improve this answer
+Follow
+edited Apr 28, 2022 at 14:31
+answered Aug 13, 2019 at 0:05
+Rob Traynere's user avatar
+Rob Traynere
+48111 gold badge33 silver badges88 bronze badges
+3
+I added an answer with some additional commands that are handy. – 
+joeqwerty
+ Aug 13, 2019 at 0:22
+1
+Link is broken but here's an archived copy since the options still seem to apply. – 
+ashleedawg
+ Sep 1, 2021 at 6:58
+Add a comment
+12
+
+If you need to change the Office update channel for a client to switch them to the monthly update channel, you can run the following:
+
+"C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe" /changesetting Channel=Current
+If you need to do this for a group of computers you can use psexec and a text file with the computer names like such:
+
+psexec @computers.txt -d -n 3 cmd /c "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe" /changesetting Channel=Current
+AND
+
+psexec @computers.txt -d -n 3 cmd /c "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe" /update user updatepromptuser=false forceappshutdown=true displaylevel=false
+Share
+Improve this answer
+Follow
+edited Dec 15, 2022 at 2:20
+Mortein's user avatar
+Mortein
+1133 bronze badges
+answered Aug 13, 2019 at 0:21
+joeqwerty's user avatar
+joeqwerty
+111k66 gold badges8181 silver badges173173 bronze badges
+Add a comment
+2
+
+The previous answers are spot on, but for anyone that is looking to update to a particular version, you'll want to use the following command:
+
+“C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe” /update user updatetoversion=X.X.X.X
+You'll want to replace the updatetoversion=X.X.X.X with the full build number found on the Microsoft Update History site.
+
+As an example, if I wanted to upgrade (or downgrade) to the May 10 2022 Monthly Enterprise Channel release[1], I would use updatetoversion=16.0.14931.20392 as the version number. (Note: the current version number starts with 16.0.x.x for Office 2016, 2019, 2021, and 365 family of products.)
+
+PS: The update history listing is split to show the four channels of updates. The Current Channel is the fastest and default setting for most office installs. Monthly and Semi-Annual are the "slow" and "slowest" in comparison which tend to be more stable. If you have a 3rd-party extension that stops working after an update, consider rolling back to the Monthly channel until there's a fix for the issue.
+
+How to read the build number and channel [1] How to read the build number and channel
+
+Share
+Improve this answer
+Follow
+answered May 31, 2022 at 8:03
+NBN-Alex's user avatar
+NBN-Alex
+7166 bronze badges
+Add a comment

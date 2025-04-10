@@ -1,4 +1,4 @@
-#Maximizing Letter Coverage in Wordle: A Five-Word Strategy.
+# Maximizing Letter Coverage in Wordle: A Five-Word Strategy
 
 To effectively narrow down the possible solutions in Wordle, using five distinct words that collectively incorporate 25 unique letters can be a strategic approach. 
 This method ensures that each letter of the English alphabet, except one, is tested, providing maximum insight into the target word's composition. One notable set of such words is.
